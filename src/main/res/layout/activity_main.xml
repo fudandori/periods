@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#80FF0000"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textSize="25sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/one"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/two"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+    <TextView
+        android:id="@+id/two"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:width="30dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/one"
+        app:layout_constraintRight_toLeftOf="@id/three"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+    <TextView
+        android:id="@+id/three"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/two"
+        app:layout_constraintRight_toLeftOf="@id/four"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+    <TextView
+        android:id="@+id/four"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/three"
+        app:layout_constraintRight_toLeftOf="@id/five"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+    <TextView
+        android:id="@+id/five"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/four"
+        app:layout_constraintRight_toLeftOf="@id/six"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+    <TextView
+        android:id="@+id/six"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/five"
+        app:layout_constraintRight_toLeftOf="@id/seven"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+    <TextView
+        android:id="@+id/seven"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/six"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/month" />
+
+
+    <TextView
+        android:id="@+id/tone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ttwo"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/ttwo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/tone"
+        app:layout_constraintRight_toLeftOf="@id/tthree"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/tthree"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ttwo"
+        app:layout_constraintRight_toLeftOf="@id/tfour"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/tfour"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/tthree"
+        app:layout_constraintRight_toLeftOf="@id/tfive"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/tfive"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/tfour"
+        app:layout_constraintRight_toLeftOf="@id/tsix"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/tsix"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/tfive"
+        app:layout_constraintRight_toLeftOf="@id/tseven"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/tseven"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/tsix"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/one" />
+
+    <TextView
+        android:id="@+id/thone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/thtwo"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/thtwo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/one"
+        app:layout_constraintRight_toLeftOf="@id/ththree"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/ththree"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/thtwo"
+        app:layout_constraintRight_toLeftOf="@id/thfour"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/thfour"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ththree"
+        app:layout_constraintRight_toLeftOf="@id/thfive"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/thfive"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/thfour"
+        app:layout_constraintRight_toLeftOf="@id/thsix"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/thsix"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/thfive"
+        app:layout_constraintRight_toLeftOf="@id/thseven"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/thseven"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/thsix"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tone" />
+
+    <TextView
+        android:id="@+id/fone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/ftwo"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/ftwo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/one"
+        app:layout_constraintRight_toLeftOf="@id/fthree"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/fthree"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ftwo"
+        app:layout_constraintRight_toLeftOf="@id/ffour"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/ffour"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/fthree"
+        app:layout_constraintRight_toLeftOf="@id/ffive"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/ffive"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ffour"
+        app:layout_constraintRight_toLeftOf="@id/fsix"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/fsix"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ffive"
+        app:layout_constraintRight_toLeftOf="@id/fseven"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/fseven"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/fsix"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/thone" />
+
+    <TextView
+        android:id="@+id/sone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/stwo"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/stwo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/sone"
+        app:layout_constraintRight_toLeftOf="@id/sthree"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/sthree"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/stwo"
+        app:layout_constraintRight_toLeftOf="@id/sfour"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/sfour"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/sthree"
+        app:layout_constraintRight_toLeftOf="@id/sfive"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/sfive"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/sfour"
+        app:layout_constraintRight_toLeftOf="@id/ssix"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/ssix"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/sfive"
+        app:layout_constraintRight_toLeftOf="@id/sseven"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/sseven"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ssix"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fone" />
+
+    <TextView
+        android:id="@+id/oone"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/otwo"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+    <TextView
+        android:id="@+id/otwo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/oone"
+        app:layout_constraintRight_toLeftOf="@id/othree"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+    <TextView
+        android:id="@+id/othree"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/otwo"
+        app:layout_constraintRight_toLeftOf="@id/ofour"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+    <TextView
+        android:id="@+id/ofour"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/othree"
+        app:layout_constraintRight_toLeftOf="@id/ofive"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+    <TextView
+        android:id="@+id/ofive"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ofour"
+        app:layout_constraintRight_toLeftOf="@id/osix"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+    <TextView
+        android:id="@+id/osix"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/ofive"
+        app:layout_constraintRight_toLeftOf="@id/oseven"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+    <TextView
+        android:id="@+id/oseven"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/round"
+        android:backgroundTint="@color/colorAccent"
+        android:gravity="center"
+        android:onClick="click"
+        app:layout_constraintLeft_toRightOf="@id/osix"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
