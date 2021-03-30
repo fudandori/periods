@@ -5,7 +5,7 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#80FF0000"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
     <TextView
@@ -18,97 +18,111 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/one"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/two"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/month"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/prevButton">
 
-    <TextView
-        android:id="@+id/two"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:width="30dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/one"
-        app:layout_constraintRight_toLeftOf="@id/three"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+        <TextView
+            android:id="@+id/one"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/two"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/three"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/two"
-        app:layout_constraintRight_toLeftOf="@id/four"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+        <TextView
+            android:id="@+id/two"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/one"
+            app:layout_constraintRight_toLeftOf="@id/three"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/four"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/three"
-        app:layout_constraintRight_toLeftOf="@id/five"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+        <TextView
+            android:id="@+id/three"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/two"
+            app:layout_constraintRight_toLeftOf="@id/four"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/five"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/four"
-        app:layout_constraintRight_toLeftOf="@id/six"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+        <TextView
+            android:id="@+id/four"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/three"
+            app:layout_constraintRight_toLeftOf="@id/five"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/six"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/five"
-        app:layout_constraintRight_toLeftOf="@id/seven"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+        <TextView
+            android:id="@+id/five"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/four"
+            app:layout_constraintRight_toLeftOf="@id/six"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/seven"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/six"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/month" />
+        <TextView
+            android:id="@+id/six"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/five"
+            app:layout_constraintRight_toLeftOf="@id/seven"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/seven"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:textColor="@android:color/white"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/six"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     <TextView
@@ -475,44 +489,46 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fone" />
 
-    <TextView
-        android:id="@+id/oone"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/otwo"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/oone"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/otwo"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
 
-    <TextView
-        android:id="@+id/otwo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/oone"
-        app:layout_constraintRight_toLeftOf="@id/othree"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/otwo"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/oone"
+            app:layout_constraintRight_toLeftOf="@id/othree"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
 
-    <TextView
-        android:id="@+id/othree"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/otwo"
-        app:layout_constraintRight_toLeftOf="@id/ofour"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/othree"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="32dp"
+            android:background="@drawable/round"
+            android:backgroundTint="@color/colorAccent"
+            android:gravity="center"
+            android:onClick="click"
+            app:layout_constraintLeft_toRightOf="@id/otwo"
+            app:layout_constraintRight_toLeftOf="@id/ofour"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
 
     <TextView
         android:id="@+id/ofour"
@@ -565,5 +581,27 @@
         app:layout_constraintLeft_toRightOf="@id/osix"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sone" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/prevButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="previous"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Anterior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="next"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Siguiente"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
