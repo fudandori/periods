@@ -21,484 +21,277 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/month"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/prevButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/prevButton">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/month">
 
         <TextView
             android:id="@+id/one"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/two"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/two"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/one"
             app:layout_constraintRight_toLeftOf="@id/three"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/three"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/two"
             app:layout_constraintRight_toLeftOf="@id/four"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/four"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/three"
             app:layout_constraintRight_toLeftOf="@id/five"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/five"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/four"
             app:layout_constraintRight_toLeftOf="@id/six"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/six"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/five"
             app:layout_constraintRight_toLeftOf="@id/seven"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/seven"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:textColor="@android:color/white"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/six"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
 
-    <TextView
-        android:id="@+id/tone"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/ttwo"
-        app:layout_constraintTop_toBottomOf="@id/one" />
+        <TextView
+            android:id="@+id/tone"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/ttwo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/tone"
-        app:layout_constraintRight_toLeftOf="@id/tthree"
-        app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/tthree"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ttwo"
-        app:layout_constraintRight_toLeftOf="@id/tfour"
-        app:layout_constraintTop_toBottomOf="@id/one" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ttwo"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/tfour"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/tthree"
-        app:layout_constraintRight_toLeftOf="@id/tfive"
-        app:layout_constraintTop_toBottomOf="@id/one" />
+        <TextView
+            android:id="@+id/ttwo"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/tfive"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/tfour"
-        app:layout_constraintRight_toLeftOf="@id/tsix"
-        app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/tsix"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/tfive"
-        app:layout_constraintRight_toLeftOf="@id/tseven"
-        app:layout_constraintTop_toBottomOf="@id/one" />
+            app:layout_constraintLeft_toRightOf="@id/tone"
+            app:layout_constraintRight_toLeftOf="@id/tthree"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/tseven"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/tsix"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/one" />
+        <TextView
+            android:id="@+id/tthree"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/thone"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/thtwo"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/thtwo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/one"
-        app:layout_constraintRight_toLeftOf="@id/ththree"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
+            app:layout_constraintLeft_toRightOf="@id/ttwo"
+            app:layout_constraintRight_toLeftOf="@id/tfour"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/ththree"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/thtwo"
-        app:layout_constraintRight_toLeftOf="@id/thfour"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
+        <TextView
+            android:id="@+id/tfour"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/thfour"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ththree"
-        app:layout_constraintRight_toLeftOf="@id/thfive"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/thfive"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/thfour"
-        app:layout_constraintRight_toLeftOf="@id/thsix"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
+            app:layout_constraintLeft_toRightOf="@id/tthree"
+            app:layout_constraintRight_toLeftOf="@id/tfive"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/thsix"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/thfive"
-        app:layout_constraintRight_toLeftOf="@id/thseven"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
+        <TextView
+            android:id="@+id/tfive"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/thseven"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/thsix"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/fone"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/ftwo"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
+            app:layout_constraintLeft_toRightOf="@id/tfour"
+            app:layout_constraintRight_toLeftOf="@id/tsix"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/ftwo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/one"
-        app:layout_constraintRight_toLeftOf="@id/fthree"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
+        <TextView
+            android:id="@+id/tsix"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/fthree"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ftwo"
-        app:layout_constraintRight_toLeftOf="@id/ffour"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
 
-    <TextView
-        android:id="@+id/ffour"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/fthree"
-        app:layout_constraintRight_toLeftOf="@id/ffive"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
+            app:layout_constraintLeft_toRightOf="@id/tfive"
+            app:layout_constraintRight_toLeftOf="@id/tseven"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/ffive"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ffour"
-        app:layout_constraintRight_toLeftOf="@id/fsix"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
+        <TextView
+            android:id="@+id/tseven"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/fsix"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ffive"
-        app:layout_constraintRight_toLeftOf="@id/fseven"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
 
-    <TextView
-        android:id="@+id/fseven"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/fsix"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/thone" />
+            app:layout_constraintLeft_toRightOf="@id/tsix"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/one" />
 
-    <TextView
-        android:id="@+id/sone"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/stwo"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
+        <TextView
+            android:id="@+id/thone"
+            style="@style/calendar_date"
 
-    <TextView
-        android:id="@+id/stwo"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/sone"
-        app:layout_constraintRight_toLeftOf="@id/sthree"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
 
-    <TextView
-        android:id="@+id/sthree"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/stwo"
-        app:layout_constraintRight_toLeftOf="@id/sfour"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/thtwo"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/sfour"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/sthree"
-        app:layout_constraintRight_toLeftOf="@id/sfive"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
+        <TextView
+            android:id="@+id/thtwo"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/one"
+            app:layout_constraintRight_toLeftOf="@id/ththree"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/sfive"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/sfour"
-        app:layout_constraintRight_toLeftOf="@id/ssix"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
+        <TextView
+            android:id="@+id/ththree"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/thtwo"
+            app:layout_constraintRight_toLeftOf="@id/thfour"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/ssix"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/sfive"
-        app:layout_constraintRight_toLeftOf="@id/sseven"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
+        <TextView
+            android:id="@+id/thfour"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ththree"
+            app:layout_constraintRight_toLeftOf="@id/thfive"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
 
-    <TextView
-        android:id="@+id/sseven"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ssix"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/fone" />
+        <TextView
+            android:id="@+id/thfive"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/thfour"
+            app:layout_constraintRight_toLeftOf="@id/thsix"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
+
+        <TextView
+            android:id="@+id/thsix"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/thfive"
+            app:layout_constraintRight_toLeftOf="@id/thseven"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
+
+        <TextView
+            android:id="@+id/thseven"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/thsix"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tone" />
+
+        <TextView
+            android:id="@+id/fone"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ftwo"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/ftwo"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/one"
+            app:layout_constraintRight_toLeftOf="@id/fthree"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/fthree"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ftwo"
+            app:layout_constraintRight_toLeftOf="@id/ffour"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/ffour"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/fthree"
+            app:layout_constraintRight_toLeftOf="@id/ffive"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/ffive"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ffour"
+            app:layout_constraintRight_toLeftOf="@id/fsix"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/fsix"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ffive"
+            app:layout_constraintRight_toLeftOf="@id/fseven"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/fseven"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/fsix"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/thone" />
+
+        <TextView
+            android:id="@+id/sone"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/stwo"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
+
+        <TextView
+            android:id="@+id/stwo"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/sone"
+            app:layout_constraintRight_toLeftOf="@id/sthree"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
+
+        <TextView
+            android:id="@+id/sthree"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/stwo"
+            app:layout_constraintRight_toLeftOf="@id/sfour"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
+
+        <TextView
+            android:id="@+id/sfour"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/sthree"
+            app:layout_constraintRight_toLeftOf="@id/sfive"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
+
+        <TextView
+            android:id="@+id/sfive"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/sfour"
+            app:layout_constraintRight_toLeftOf="@id/ssix"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
+
+        <TextView
+            android:id="@+id/ssix"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/sfive"
+            app:layout_constraintRight_toLeftOf="@id/sseven"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
+
+        <TextView
+            android:id="@+id/sseven"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ssix"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fone" />
 
         <TextView
             android:id="@+id/oone"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
+            style="@style/calendar_date"
             android:layout_marginBottom="32dp"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/otwo"
@@ -506,102 +299,58 @@
 
         <TextView
             android:id="@+id/otwo"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/oone"
             app:layout_constraintRight_toLeftOf="@id/othree"
             app:layout_constraintTop_toBottomOf="@id/sone" />
 
         <TextView
             android:id="@+id/othree"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/round"
-            android:backgroundTint="@color/colorAccent"
-            android:gravity="center"
-            android:onClick="click"
+            style="@style/calendar_date"
             app:layout_constraintLeft_toRightOf="@id/otwo"
             app:layout_constraintRight_toLeftOf="@id/ofour"
             app:layout_constraintTop_toBottomOf="@id/sone" />
 
-    <TextView
-        android:id="@+id/ofour"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/othree"
-        app:layout_constraintRight_toLeftOf="@id/ofive"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/ofour"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/othree"
+            app:layout_constraintRight_toLeftOf="@id/ofive"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
 
-    <TextView
-        android:id="@+id/ofive"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ofour"
-        app:layout_constraintRight_toLeftOf="@id/osix"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/ofive"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ofour"
+            app:layout_constraintRight_toLeftOf="@id/osix"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
 
-    <TextView
-        android:id="@+id/osix"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/ofive"
-        app:layout_constraintRight_toLeftOf="@id/oseven"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/osix"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/ofive"
+            app:layout_constraintRight_toLeftOf="@id/oseven"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
 
-    <TextView
-        android:id="@+id/oseven"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="32dp"
-        android:background="@drawable/round"
-        android:backgroundTint="@color/colorAccent"
-        android:gravity="center"
-        android:onClick="click"
-        app:layout_constraintLeft_toRightOf="@id/osix"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sone" />
+        <TextView
+            android:id="@+id/oseven"
+            style="@style/calendar_date"
+            app:layout_constraintLeft_toRightOf="@id/osix"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sone" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/prevButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonStyle"
         android:onClick="previous"
-        android:layout_marginStart="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Anterior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonStyle"
         android:onClick="next"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Siguiente"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
