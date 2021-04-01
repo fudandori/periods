@@ -2,10 +2,17 @@ package com.fudandori.periods
 
 class Config(
     var dates: ArrayList<String>,
-    var length: Int
+    var span: Int
 ) {
     fun lastDay(): String {
-        return if(dates.isNullOrEmpty()) "-" else dates.last()
+        var result = "-"
+
+        if (!dates.isNullOrEmpty()) {
+            dates.sort()
+            result = dates.last()
+        }
+
+        return result
     }
 
     fun reset() {

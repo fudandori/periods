@@ -2,22 +2,16 @@ package com.fudandori.periods
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.content.res.ColorStateList
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.EditText
 import android.widget.TextView
-import androidx.annotation.ColorRes
-import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
 import com.google.gson.Gson
-import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -25,7 +19,7 @@ const val fileName = "savedata"
 
 class MainActivity : AppCompatActivity() {
     private val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.FRANCE)
-    private val currMonth = Calendar.getInstance()
+    private lateinit var selectedMonth: String
     private lateinit var bounceAnim: Animation
     private lateinit var elements: Array<TextView>
     private lateinit var config: Config
@@ -39,25 +33,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        val inflater = getMenuInflater();
-        inflater.inflate(R.menu.items, menu);
-        return true;
+        menuInflater.inflate(R.menu.items, menu)
+        return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add_days -> {
-
-            val d = try {
-                dateFormat.parse(config.lastDay())
-            } catch (e: ParseException) {
-                null
-            }
-
-            if (d != null) {
-                val tCal = Calendar.getInstance()
-                tCal.time = d
-                update(tCal)
-            }
+            update(config.lastDay())
+            render()
             true
         }
 
@@ -69,20 +52,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.set_period -> {
-            val dialogBuilder = AlertDialog.Builder(this)
-            val inflater = layoutInflater
-            val dialogView = inflater.inflate(R.layout.period_span, null)
-            val editText = dialogView.findViewById<EditText>(R.id.period_span)
-            editText.setText(config.length.toString())
-            dialogBuilder.setView(dialogView)
-                .setPositiveButton("OK") { _, _ ->
-                    config.length = editText.text.toString().toInt()
-                    render()
-                    save()
-                }
-                .setNegativeButton("Cancel") { dialog, _ -> dialog.dismiss() }
-
-            dialogBuilder.create().show()
+            periodDialog(this, config.span.toString(), ::savePeriodSpan)
             true
         }
 
@@ -103,12 +73,20 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
+     * Modifies the span property
+     */
+    private fun savePeriodSpan(i: Int) {
+        config.span = i
+        save()
+    }
+
+    /**
      * Callback for the click event. Shows a pop up confirmation to add a new period date to the selected day
      */
     fun click(it: View) {
-        val value = getDayValue(it)
+        val value = extractDate(it)
         if (value.isNotBlank()) {
-            if (config.length != 0) {
+            if (config.span != 0) {
                 addDialog(value, ::recalculate, this)
             } else {
                 alertDialog(this, "Aviso", "Debes configurar cada cuántos días calcular el periodo")
@@ -117,94 +95,70 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Retrieves the text from a TextView storing a day with a leading 0
+     * Retrieves the selected date with YYYY-MM-dd format
      */
-    private fun getDayValue(view: View): String {
-        val day = elements.find { v -> v == view }
-        return if(day?.text != null) day.text.toString() else ""
-    }
+    private fun extractDate(view: View): String {
+        val ele = elements.find { v -> v == view }
+        var date = ""
 
-    /**
-     * Deletes all the stored period dates after the input day and generates new ones based on the selected day
-     * @param day Value of the day to use for recalculating. It must be 2 characters long
-     */
-    private fun recalculate(day: String) {
-        val date = clearNextMonths(day)
-        updateNextMonths(date, day)
-        render()
-    }
-
-    /**
-     * Generates the prediction for the upcoming 20 period dates
-     */
-    private fun updateNextMonths(date: String, day: String) {
-        val tCal = Calendar.getInstance()
-        tCal.set(Calendar.DAY_OF_MONTH, day.toInt())
-        tCal.set(Calendar.MONTH, date.substring(5, 7).toInt() - 1)
-        tCal.set(Calendar.YEAR, date.substring(0, 4).toInt())
-
-        update(tCal)
-    }
-
-    /**
-     * Removes every period date after the input date
-     */
-    private fun clearNextMonths(day: String, clearDay: Boolean = false): String {
-        val date = dayFormat(day)
-        config.dates.add(date)
-        config.dates.sort()
-        config.dates.removeAll { s -> if (clearDay) s >= date else s > date }
+        if (ele?.text != null && ele.text.isNotBlank()) {
+            val day = pad(ele.text.toString())
+            val month = extractMonth(selectedMonth)
+            val year = extractYear(selectedMonth)
+            date = "$year-$month-$day"
+        }
 
         return date
     }
 
     /**
-     * Formats the input day to the current's month Calendar date to a YYYY-MM-dd String
+     * Deletes all subsequent highlighted dates from the input date and generates new ones
+     * @param date YYYY-MM-dd formatted date
      */
-    private fun dayFormat(input: String): String {
-        val day = pad(input)
-        val month = pad(currMonth.get(Calendar.MONTH) + 1)
-        val year = currMonth.get(Calendar.YEAR).toString()
-        return "$year-$month-$day"
+    private fun recalculate(date: String) {
+        config.dates.add(date)
+        clearSubsequent(date)
+        update(date)
+        render()
     }
 
     /**
-     * Pads the input String with a leading 0
+     * Removes the highlighted day and if specified, the subsequent days
+     * @param date the day in the current month to be removed
+     * @param all wheter or not remove the subsequent highlights
      */
-    private fun pad(input: String): String {
-        return input.padStart(2, '0')
+    private fun clearDate(date: String, all: Boolean) {
+        config.dates.remove(date)
+        if (all) clearSubsequent(date)
+        render()
+        save()
     }
 
     /**
-     * Pads the input Int with a leading 0
+     * Removes every period highlight after the input date
      */
-    private fun pad(input: Int): String {
-        return input.toString().padStart(2, '0')
+    private fun clearSubsequent(date: String) {
+        config.dates.removeAll { s -> s > date }
     }
 
     /**
-     * Gives format to the calendar
+     * Draws the calendar
      */
     private fun render() {
         setMonthName()
 
-        val start = getFirstDay()
-        val end = currMonth.getActualMaximum(Calendar.DAY_OF_MONTH)
+        val start = getFirstDay(selectedMonth, dateFormat)
+
+        val c = Calendar.getInstance()
+        c.time = dateFormat.parse(selectedMonth) ?: Date()
+        val end = c.getActualMaximum(Calendar.DAY_OF_MONTH)
 
         renderGaps(start, end)
         renderDays(start, end)
     }
 
     /**
-     * Retrieves the column of the first day of the month
-     */
-    private fun getFirstDay(): Int {
-        val weekDay = currMonth.get(Calendar.DAY_OF_WEEK)
-        return if (weekDay == 1) 6 else weekDay - 2
-    }
-
-    /**
-     * Renders invisible the gaps before the first day and after the last day of the month
+     * Renders the gaps before the first day and after the last day of the month invisible
      */
     private fun renderGaps(start: Int, end: Int) {
         for (x in 0 until start) empty(elements[x])
@@ -215,59 +169,44 @@ class MainActivity : AppCompatActivity() {
      * Gives format to the existing days in a month
      */
     private fun renderDays(start: Int, end: Int) {
-        val c = Calendar.getInstance()
-
+        val date = dateFormat.format(Calendar.getInstance().time)
+        val today = intDate(date)
         val days = findDays()
 
         for (x in 1..end) {
-            val highlight = isSelected(x, days)
+            val highlight = days.contains(x)
             val elem = elements[x + start - 1]
 
             elem.text = x.toString()
             stylize(elem, highlight)
 
-            if (!highlight && isSameMonth(c) && c.get(Calendar.DAY_OF_MONTH) == x) {
-                setViewColor(elem, R.color.green)
+            if (!highlight && isSameMonth(date) && today == x) {
+                setViewColor(elem, R.color.green, this)
             }
         }
-    }
-
-    /**
-     * Checks if the input day is among the period days
-     */
-    private fun isSelected(day: Int, days: Array<Int>): Boolean {
-        var n = 0
-        var found = false
-        while (n < days.size && !found) {
-            found = days[n] == day
-            n++
-        }
-        return found
     }
 
     /**
      * Sets the color and the animation of a given layout day
      */
-    private fun stylize(view: View?, highlight: Boolean) {
+    private fun stylize(view: View, highlight: Boolean) {
         val color: Int
         if (highlight) {
             color = R.color.red
-            view?.startAnimation(bounceAnim)
+            view.startAnimation(bounceAnim)
 
-            if (view != null) {
-                val day = getDayValue(view)
-                view.setOnClickListener {
-                    clearNextMonths(day, true)
-                    render()
-                }
+            val date = extractDate(view)
+            view.setOnClickListener {
+                removeDialog(this, date, ::clearDate)
             }
+
         } else {
             color = R.color.colorAccent
-            view?.clearAnimation()
-            view?.setOnClickListener { click(view) }
+            view.clearAnimation()
+            view.setOnClickListener { click(view) }
         }
 
-        setViewColor(view, color)
+        setViewColor(view, color, this)
     }
 
     /**
@@ -275,31 +214,28 @@ class MainActivity : AppCompatActivity() {
      * @return Array with 2 days maximum
      */
     private fun findDays(): Array<Int> {
-        val days = config.dates.filter { m ->
-            val c = Calendar.getInstance()
-            c.time = dateFormat.parse(m) ?: Date()
-            isSameMonth(c)
-        }
-
-        return Array(days.size) { i -> days[i].takeLast(2).toInt() }
+        val days = config.dates.filter { m -> isSameMonth(m) }
+        return Array(days.size) { i -> intDate(days[i]) }
     }
 
     /**
      * Checks if the input date is on the same month as the current selected month
      */
-    private fun isSameMonth(input: Calendar): Boolean {
-        return input.get(Calendar.MONTH) == currMonth.get(Calendar.MONTH)
-                && input.get(Calendar.YEAR) == currMonth.get(Calendar.YEAR)
+    private fun isSameMonth(input: String): Boolean {
+        return input.substring(0, 7) == selectedMonth.substring(0, 7)
     }
 
     /**
-     * Retrieves the name of the current month and prints it to the TextView storing it
+     * Retrieves the name of the selected month and prints it to the TextView storing it
      */
     private fun setMonthName() {
-        val name = SimpleDateFormat("MMMM", Locale("ES"))
-            .format(currMonth.time)
-            .toUpperCase(Locale.getDefault())
-        findViewById<TextView>(R.id.month).text = name
+        val d = dateFormat.parse(selectedMonth)
+        if (d != null) {
+            val name = SimpleDateFormat("MMMM", Locale("ES"))
+                .format(d)
+                .toUpperCase(Locale.getDefault())
+            findViewById<TextView>(R.id.month).text = name
+        }
     }
 
     /**
@@ -307,7 +243,7 @@ class MainActivity : AppCompatActivity() {
      */
     private fun empty(t: TextView?) {
         t?.text = ""
-        setViewColor(t, R.color.transparent)
+        setViewColor(t, R.color.transparent, this)
         t?.clearAnimation()
     }
 
@@ -316,8 +252,15 @@ class MainActivity : AppCompatActivity() {
      * @param amount adds or subtracts months. A negative value switches to previous months
      */
     private fun switchMonth(amount: Int) {
-        currMonth.add(Calendar.MONTH, amount)
-        render()
+        val d = dateFormat.parse(selectedMonth)
+        if (d != null) {
+            val c = Calendar.getInstance()
+            c.time = d
+            c.add(Calendar.MONTH, amount)
+            selectedMonth = dateFormat.format(c.time)
+
+            render()
+        }
     }
 
     fun previous(it: View) {
@@ -329,21 +272,18 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * Sets the color of the input element
-     * @param color Hex color to be painted
-     */
-    private fun setViewColor(view: View?, @ColorRes id: Int) {
-        view?.backgroundTintList = ColorStateList.valueOf(ContextCompat.getColor(this, id))
-    }
-
-    /**
      * Generates 20 period dates after the input date, stores them into the array and serializes them
-     * @param cal Calendar with the starting date
+     * @param date YYYY-MM-dd formatted string date
      */
-    private fun update(cal: Calendar) {
+    private fun update(date: String) {
+        val tCal = Calendar.getInstance()
+        tCal.set(Calendar.DAY_OF_MONTH, date.substring(8).toInt())
+        tCal.set(Calendar.MONTH, date.substring(5, 7).toInt() - 1)
+        tCal.set(Calendar.YEAR, date.substring(0, 4).toInt())
+
         for (i in 1..20) {
-            cal.add(Calendar.DATE, config.length)
-            config.dates.add(dateFormat.format(cal.time))
+            tCal.add(Calendar.DATE, config.span)
+            config.dates.add(dateFormat.format(tCal.time))
         }
 
         save()
@@ -356,7 +296,10 @@ class MainActivity : AppCompatActivity() {
     private fun init() {
         setContentView(R.layout.activity_main)
         bounceAnim = AnimationUtils.loadAnimation(applicationContext, R.anim.bounce)
-        currMonth.set(Calendar.DAY_OF_MONTH, 1)
+
+        val c = Calendar.getInstance()
+        c.set(Calendar.DAY_OF_MONTH, 1)
+        selectedMonth = dateFormat.format(c.time)
 
         elements = arrayOf(
             findViewById(R.id.one),
