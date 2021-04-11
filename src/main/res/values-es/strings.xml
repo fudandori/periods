@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Periods</string>
+    <string name="add_title">Añadir día</string>
+    <string name="add_body">¿Quieres añadir el día %1$s?</string>
+    <string name="remove_body">¿Deseas eliminar el día %1$d?</string>
+    <string name="delete_title">Eliminar día</string>
+    <string name="warning">Aviso</string>
+    <string name="warning_body">Debes configurar cada cuántos días calcular el periodo</string>
+    <string name="warning_body_2">Todavía no se ha seleccionado ningún día. Debes seleccionar el primer día pulsando sobre él para empezar los cálculos</string>
+    <string name="day_num">Nº de días entre periodos:"</string>
+    <string name="next">Siguiente</string>
+    <string name="previous">Anterior</string>
+    <string name="remove_all">Eliminar días posteriores</string>
+</resources>

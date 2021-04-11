@@ -82,8 +82,8 @@ fun load(c: Context, act: Activity): Config {
         result = Config(ArrayList(), 0)
         alertDialog(
             act,
-            "Aviso",
-            "Todavía no se ha seleccionado ningún día. Debes seleccionar el primer día pulsando sobre él para empezar los cálculos"
+            R.string.warning,
+            R.string.warning_body_2
         )
     }
 

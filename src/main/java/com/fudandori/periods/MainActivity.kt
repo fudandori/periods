@@ -39,8 +39,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
         R.id.add_days -> {
-            update(config.lastDay())
-            render()
+            if (!config.empty()) {
+                update(config.lastDay())
+                render()
+            }
             true
         }
 
@@ -89,7 +91,7 @@ class MainActivity : AppCompatActivity() {
             if (config.span != 0) {
                 addDialog(value, ::recalculate, this)
             } else {
-                alertDialog(this, "Aviso", "Debes configurar cada cuántos días calcular el periodo")
+                alertDialog(this, R.string.warning, R.string.warning_body)
             }
         }
     }
@@ -231,7 +233,7 @@ class MainActivity : AppCompatActivity() {
     private fun setMonthName() {
         val d = dateFormat.parse(selectedMonth)
         if (d != null) {
-            val name = SimpleDateFormat("MMMM", Locale("ES"))
+            val name = SimpleDateFormat("MMMM", Locale.getDefault())
                 .format(d)
                 .toUpperCase(Locale.getDefault())
             findViewById<TextView>(R.id.month).text = name

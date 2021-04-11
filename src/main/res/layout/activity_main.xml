@@ -344,13 +344,13 @@
         android:id="@+id/prevButton"
         style="@style/buttonStyle"
         android:onClick="previous"
-        android:text="Anterior"
+        android:text="@string/previous"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         style="@style/buttonStyle"
         android:onClick="next"
-        android:text="Siguiente"
+        android:text="@string/next"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

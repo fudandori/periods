@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Periods</string>
+    <string name="add_title">Add day</string>
+    <string name="add_body">Would you like to add the day %1$s?</string>
+    <string name="remove_body">Would you like to remove the day %1$d?</string>
+    <string name="delete_title">Delete day</string>
+    <string name="warning">Warning</string>
+    <string name="warning_body">You must set how many days pass between periods</string>
+    <string name="warning_body_2">No day selected yet. You have to select the first day by pushing on it to start the calculations</string>
+    <string name="day_num">Number of days between periods:"</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="remove_all">Remove subsequent days</string>
 </resources>

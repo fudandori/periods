@@ -25,6 +25,9 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_margin">8dp</item>
         <item name="layout_constraintBottom_toBottomOf">parent</item>
+        <item name="android:background">#b4aee8</item>
+        <item name="android:textColor">@android:color/white</item>
+
     </style>
 
 </resources>

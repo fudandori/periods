@@ -5,7 +5,7 @@ class Config(
     var span: Int
 ) {
     fun lastDay(): String {
-        var result = "-"
+        var result = "null"
 
         if (!dates.isNullOrEmpty()) {
             dates.sort()
@@ -17,5 +17,9 @@ class Config(
 
     fun reset() {
         dates = ArrayList()
+    }
+
+    fun empty() : Boolean {
+        return dates.isNullOrEmpty()
     }
 }
