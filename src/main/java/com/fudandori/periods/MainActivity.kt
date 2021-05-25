@@ -11,6 +11,7 @@ import android.view.animation.AnimationUtils
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.view.ViewCompat
 import com.google.gson.Gson
 import java.text.SimpleDateFormat
 import java.util.*
@@ -193,7 +194,9 @@ class MainActivity : AppCompatActivity() {
      */
     private fun stylize(view: View, highlight: Boolean) {
         val color: Int
+        val elev: Float
         if (highlight) {
+            elev = 11f
             color = R.color.red
             view.startAnimation(bounceAnim)
 
@@ -201,13 +204,14 @@ class MainActivity : AppCompatActivity() {
             view.setOnClickListener {
                 removeDialog(this, date, ::clearDate)
             }
-
         } else {
+            elev = 10f
             color = R.color.colorAccent
             view.clearAnimation()
             view.setOnClickListener { click(view) }
         }
 
+        ViewCompat.setElevation(view, elev)
         setViewColor(view, color, this)
     }
 

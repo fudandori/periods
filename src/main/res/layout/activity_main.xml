@@ -79,8 +79,6 @@
         <TextView
             android:id="@+id/tone"
             style="@style/calendar_date"
-
-
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/ttwo"
             app:layout_constraintTop_toBottomOf="@id/one" />
@@ -88,8 +86,6 @@
         <TextView
             android:id="@+id/ttwo"
             style="@style/calendar_date"
-
-
             app:layout_constraintLeft_toRightOf="@id/tone"
             app:layout_constraintRight_toLeftOf="@id/tthree"
             app:layout_constraintTop_toBottomOf="@id/one" />
@@ -142,8 +138,6 @@
         <TextView
             android:id="@+id/thone"
             style="@style/calendar_date"
-
-
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/thtwo"
             app:layout_constraintTop_toBottomOf="@id/tone" />
@@ -151,7 +145,7 @@
         <TextView
             android:id="@+id/thtwo"
             style="@style/calendar_date"
-            app:layout_constraintLeft_toRightOf="@id/one"
+            app:layout_constraintLeft_toRightOf="@id/thone"
             app:layout_constraintRight_toLeftOf="@id/ththree"
             app:layout_constraintTop_toBottomOf="@id/tone" />
 
@@ -193,6 +187,7 @@
         <TextView
             android:id="@+id/fone"
             style="@style/calendar_date"
+            android:layout_marginLeft="16dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/ftwo"
             app:layout_constraintTop_toBottomOf="@id/thone" />
@@ -200,7 +195,7 @@
         <TextView
             android:id="@+id/ftwo"
             style="@style/calendar_date"
-            app:layout_constraintLeft_toRightOf="@id/one"
+            app:layout_constraintLeft_toRightOf="@id/fone"
             app:layout_constraintRight_toLeftOf="@id/fthree"
             app:layout_constraintTop_toBottomOf="@id/thone" />
 
@@ -235,6 +230,7 @@
         <TextView
             android:id="@+id/fseven"
             style="@style/calendar_date"
+            android:layout_marginRight="16dp"
             app:layout_constraintLeft_toRightOf="@id/fsix"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toBottomOf="@id/thone" />
